@@ -18,6 +18,8 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
          super.viewDidLoad()
+
+        setupUI()
     }
 
     // MARK: - Methods
@@ -35,5 +37,7 @@ class TabBarController: UITabBarController {
         habbitViewController.tabBarItem = item1
         infoViewController.tabBarItem = item2
 
+        UITabBar.appearance().tintColor = UIColor.purple
+        UITabBar.appearance().backgroundColor = .systemGray6
     }
 }

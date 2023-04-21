@@ -15,8 +15,32 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon-1024px" translatesAutoresizingMaskIntoConstraints="NO" id="psJ-aY-uuZ">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="D7D-em-qeG"/>
+                                    <constraint firstAttribute="width" constant="150" id="WKg-qj-mko"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyHabits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flX-91-DJj">
+                                <rect key="frame" x="151" y="523" width="112" height="339"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="flX-91-DJj" secondAttribute="bottom" id="0lN-Ce-WOO"/>
+                            <constraint firstItem="psJ-aY-uuZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4Cs-pG-SZ4"/>
+                            <constraint firstItem="flX-91-DJj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Lr4-KO-QcF"/>
+                            <constraint firstItem="flX-91-DJj" firstAttribute="top" secondItem="psJ-aY-uuZ" secondAttribute="bottom" id="T07-sQ-EBo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="flX-91-DJj" secondAttribute="trailing" id="iVS-8O-MYM"/>
+                            <constraint firstItem="psJ-aY-uuZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mNn-p6-jlC"/>
+                            <constraint firstItem="flX-91-DJj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x9p-tT-b6B"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,8 +49,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppIcon-1024px" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
