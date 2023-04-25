@@ -114,6 +114,7 @@ class HabitViewController: UIViewController {
     var setColor: UIColor = .systemOrange
     var setTime = Date()
     private var setReturnTime = ""
+    var habit: Habit?
 
     var numberHabitVC = 0
 
@@ -127,7 +128,7 @@ class HabitViewController: UIViewController {
         return $0
     }(UIButton())
 
-    var alertController = UIAlertController(title: "Удалить привычку", message: "что-то", preferredStyle: .alert)
+    var alertController = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку?", preferredStyle: .alert)
     let alertControllerCheckEmptyText = UIAlertController(title: "Ошибка", message: "название должно быть заполнено", preferredStyle: .alert)
     var titleView = "Создать"
 
