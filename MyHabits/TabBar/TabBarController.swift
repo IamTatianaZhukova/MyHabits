@@ -11,7 +11,7 @@ class TabBarController: UITabBarController {
 
     // MARK: - Properties
 
-    var habbitViewController: UINavigationController!
+    var habitsViewController: UINavigationController!
     var infoViewController: UINavigationController!
 
     // MARK: - Life cycle
@@ -25,19 +25,19 @@ class TabBarController: UITabBarController {
     // MARK: - Methods
 
     private func setupUI() {
-        habbitViewController = UINavigationController.init(rootViewController: HabbitViewController())
+        habitsViewController = UINavigationController.init(rootViewController: HabitsViewController())
         infoViewController = UINavigationController.init(rootViewController: InfoViewController())
 
-        self.viewControllers = [habbitViewController, infoViewController]
+        self.viewControllers = [habitsViewController, infoViewController]
 
         let item1 = UITabBarItem(title: "Привычки", image: UIImage (systemName: "rectangle.grid.1x2.fill"), tag: 0)
 
         let item2 = UITabBarItem(title: "Информация", image: UIImage(systemName: "info.circle.fill"), tag: 1)
 
-        habbitViewController.tabBarItem = item1
+        habitsViewController.tabBarItem = item1
         infoViewController.tabBarItem = item2
 
-        UITabBar.appearance().tintColor = UIColor.purple
-        UITabBar.appearance().backgroundColor = .systemGray6
+        UITabBar.appearance().tintColor = UIColor(named: "ColorPurple")
+        UITabBar.appearance().backgroundColor = .systemGray2
     }
 }

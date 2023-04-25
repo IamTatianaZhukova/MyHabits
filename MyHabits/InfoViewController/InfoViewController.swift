@@ -17,7 +17,7 @@ class InfoViewController: UIViewController {
 
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 0
-        let firstText = NSAttributedString(string: "Привычка за 21 день\n\n", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 18, weight: .semibold), NSAttributedString.Key.paragraphStyle:paragraphStyle])
+        let firstText = NSAttributedString(string: "Привычка за 21 день\n\n", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20, weight: .semibold), NSAttributedString.Key.paragraphStyle:paragraphStyle])
         let secondText = NSAttributedString(string: """
             Прохождение этапов, за которые за 21 день вырабатывается привычка, подчиняется следующему алгоритму:\n
             1. Провести 1 день без обращения к старым привычкам, стараться вести себя так, как будто цель, загаданная в перспективу, находится на расстоянии шага.\n
@@ -27,7 +27,7 @@ class InfoViewController: UIViewController {
             5. Держать планку 40 дней. Практикующий методику уже чувствует себя освободившимся от прошлого негатива и двигается в нужном направлении с хорошей динамикой.\n
             6. На 90-й день соблюдения техники все лишнее из "прошлой жизни" перестает напоминать о себе, и человек, оглянувшись назад, осознает себя полностью обновившимся\n
             Источник: psychbook.ru
-            """,attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.paragraphStyle:paragraphStyle])
+            """,attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17), NSAttributedString.Key.paragraphStyle:paragraphStyle])
         let allText = NSMutableAttributedString()
         allText.append(firstText)
         allText.append(secondText)
@@ -41,11 +41,13 @@ class InfoViewController: UIViewController {
 
         infoTextView.textContainerInset = UIEdgeInsets(top: 22, left: 16, bottom: 0, right: 16)
 
+        let guide = view.safeAreaLayoutGuide
+
         NSLayoutConstraint.activate([
-            infoTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            infoTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            infoTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            infoTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            infoTextView.topAnchor.constraint(equalTo: guide.topAnchor),
+            infoTextView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+            infoTextView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            infoTextView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
         ])
     }
 }
