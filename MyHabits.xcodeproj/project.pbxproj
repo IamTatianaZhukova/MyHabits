@@ -17,6 +17,7 @@
 		F67D726829F1551D003DEE35 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D726729F1551D003DEE35 /* InfoViewController.swift */; };
 		F67D726F29F27B73003DEE35 /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D726E29F27B73003DEE35 /* HabitsStore.swift */; };
 		F67D727329F67941003DEE35 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D727229F67941003DEE35 /* HabitViewController.swift */; };
+		F67D727629F7CB94003DEE35 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D727529F7CB94003DEE35 /* ProgressCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F67D726729F1551D003DEE35 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		F67D726E29F27B73003DEE35 /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
 		F67D727229F67941003DEE35 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		F67D727529F7CB94003DEE35 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		F67D724929F1437D003DEE35 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				F67D727429F7CB27003DEE35 /* TableVew */,
 				F67D726629F1550E003DEE35 /* InfoViewController */,
 				F67D726329F154C5003DEE35 /* HabitViewController */,
 				F67D726029F14C9A003DEE35 /* TabBar */,
@@ -109,6 +112,14 @@
 				F67D726729F1551D003DEE35 /* InfoViewController.swift */,
 			);
 			path = InfoViewController;
+			sourceTree = "<group>";
+		};
+		F67D727429F7CB27003DEE35 /* TableVew */ = {
+			isa = PBXGroup;
+			children = (
+				F67D727529F7CB94003DEE35 /* ProgressCollectionViewCell.swift */,
+			);
+			path = TableVew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 				F67D726229F14F3E003DEE35 /* TabBarController.swift in Sources */,
 				F67D727329F67941003DEE35 /* HabitViewController.swift in Sources */,
 				F67D726529F154DC003DEE35 /* HabitsViewController.swift in Sources */,
+				F67D727629F7CB94003DEE35 /* ProgressCollectionViewCell.swift in Sources */,
 				F67D724B29F1437D003DEE35 /* AppDelegate.swift in Sources */,
 				F67D726829F1551D003DEE35 /* InfoViewController.swift in Sources */,
 				F67D724D29F1437D003DEE35 /* SceneDelegate.swift in Sources */,
