@@ -19,7 +19,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
 
     private lazy var timeHabit: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.textColor = UIColor(named: "Gray")
+        $0.textColor = .systemGray2
         $0.font = .systemFont(ofSize: 12)
 
         return $0

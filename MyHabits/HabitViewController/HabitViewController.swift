@@ -114,7 +114,6 @@ class HabitViewController: UIViewController {
     var setColor: UIColor = .systemOrange
     var setTime = Date()
     private var setReturnTime = ""
-    var habit: Habit?
 
     var numberHabitVC = 0
 
@@ -129,7 +128,7 @@ class HabitViewController: UIViewController {
     }(UIButton())
 
     var alertController = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку?", preferredStyle: .alert)
-    let alertControllerCheckEmptyText = UIAlertController(title: "Ошибка", message: "название должно быть заполнено", preferredStyle: .alert)
+    let alertControllerCheckEmptyText = UIAlertController(title: "Ошибка", message: "Название должно быть заполнено", preferredStyle: .alert)
     var titleView = "Создать"
 
     override func viewDidLoad() {
@@ -151,9 +150,12 @@ class HabitViewController: UIViewController {
 
     private func navigationController() {
         navigationItem.title = titleView
+
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .white
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+
+        navigationItem.hidesBackButton = true
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationItem.largeTitleDisplayMode = .never
 
@@ -241,12 +243,12 @@ class HabitViewController: UIViewController {
             let store = HabitsStore.shared
             store.habits.append(newHabit)
 
-            self.dismiss(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 
     @objc func cancelHabit() {
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 
     @objc func chooseColor() {

@@ -19,6 +19,9 @@
 		F67D727329F67941003DEE35 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D727229F67941003DEE35 /* HabitViewController.swift */; };
 		F67D727629F7CB94003DEE35 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D727529F7CB94003DEE35 /* ProgressCollectionViewCell.swift */; };
 		F67D727829F7D16F003DEE35 /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D727729F7D16F003DEE35 /* HabitCollectionViewCell.swift */; };
+		F67D727A29F8184C003DEE35 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D727929F8184C003DEE35 /* HabitDetailsViewController.swift */; };
+		F67D727C29F81992003DEE35 /* HabitTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D727B29F81992003DEE35 /* HabitTableViewHeader.swift */; };
+		F67D727E29F81C51003DEE35 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D727D29F81C51003DEE35 /* HabitTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		F67D727229F67941003DEE35 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		F67D727529F7CB94003DEE35 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		F67D727729F7D16F003DEE35 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		F67D727929F8184C003DEE35 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
+		F67D727B29F81992003DEE35 /* HabitTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewHeader.swift; sourceTree = "<group>"; };
+		F67D727D29F81C51003DEE35 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 			children = (
 				F67D726429F154DC003DEE35 /* HabitsViewController.swift */,
 				F67D727229F67941003DEE35 /* HabitViewController.swift */,
+				F67D727929F8184C003DEE35 /* HabitDetailsViewController.swift */,
 			);
 			path = HabitViewController;
 			sourceTree = "<group>";
@@ -121,6 +128,8 @@
 			children = (
 				F67D727529F7CB94003DEE35 /* ProgressCollectionViewCell.swift */,
 				F67D727729F7D16F003DEE35 /* HabitCollectionViewCell.swift */,
+				F67D727B29F81992003DEE35 /* HabitTableViewHeader.swift */,
+				F67D727D29F81C51003DEE35 /* HabitTableViewCell.swift */,
 			);
 			path = TableVew;
 			sourceTree = "<group>";
@@ -195,10 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67D727E29F81C51003DEE35 /* HabitTableViewCell.swift in Sources */,
+				F67D727C29F81992003DEE35 /* HabitTableViewHeader.swift in Sources */,
 				F67D726F29F27B73003DEE35 /* HabitsStore.swift in Sources */,
 				F67D724F29F1437D003DEE35 /* ViewController.swift in Sources */,
 				F67D726229F14F3E003DEE35 /* TabBarController.swift in Sources */,
 				F67D727329F67941003DEE35 /* HabitViewController.swift in Sources */,
+				F67D727A29F8184C003DEE35 /* HabitDetailsViewController.swift in Sources */,
 				F67D726529F154DC003DEE35 /* HabitsViewController.swift in Sources */,
 				F67D727629F7CB94003DEE35 /* ProgressCollectionViewCell.swift in Sources */,
 				F67D724B29F1437D003DEE35 /* AppDelegate.swift in Sources */,

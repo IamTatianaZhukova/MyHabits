@@ -11,21 +11,31 @@ class ProgressCollectionViewCell: UICollectionViewCell {
 
     private lazy var nameProgressLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "Все получится"
+        $0.text = "Всё получится!"
         $0.textColor = .systemGray
         $0.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
 
         return $0
     }(UILabel())
 
-    private var progressView: UIProgressView = {
+    private lazy var percentLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.progressTintColor = UIColor(named: "ColorPurple")
-        $0.progress = HabitsStore.shared.todayProgress
-        $0.tag = 50
+        var percent: Int = Int(HabitsStore.shared.todayProgress * 100)
+        $0.text = "\(percent) %"
+        $0.textColor = .systemGray
+        $0.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
 
         return $0
-    }(UIProgressView())
+    }(UILabel())
+
+    lazy var progressView: UIProgressView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.progressTintColor = UIColor(named: "ColorPurple")
+        $0.setProgress(HabitsStore.shared.todayProgress, animated: true)
+        $0.tag = 130
+
+        return $0
+    }(UIProgressView(progressViewStyle: .default))
 
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -40,6 +50,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
 
     private func setupUI() {
         contentView.addSubview(nameProgressLabel)
+        contentView.addSubview(percentLabel)
         contentView.addSubview(progressView)
     }
 
@@ -47,6 +58,9 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             nameProgressLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             nameProgressLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+
+            percentLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            percentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
 
             progressView.topAnchor.constraint(equalTo: nameProgressLabel.bottomAnchor, constant: 12),
             progressView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
