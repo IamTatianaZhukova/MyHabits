@@ -20,6 +20,8 @@ class HabitTableViewHeader: UITableViewHeaderFooterView {
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+
+        setupUI()
         setupConstraint()
     }
 
@@ -28,9 +30,11 @@ class HabitTableViewHeader: UITableViewHeaderFooterView {
     }
 
 
-    private func setupConstraint() {
+    private func setupUI() {
         addSubview(titleLabel)
+    }
 
+    private func setupConstraint() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),

@@ -155,7 +155,6 @@ class HabitViewController: UIViewController {
         appearance.backgroundColor = .white
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
 
-        navigationItem.hidesBackButton = true
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationItem.largeTitleDisplayMode = .never
 
@@ -232,6 +231,7 @@ class HabitViewController: UIViewController {
     }
 
     @objc func saveHabit(){
+
         if self.nameHabitTextField.text == "" {
             addTargetShowAlertEmptyTextField()
         } else {
@@ -243,12 +243,13 @@ class HabitViewController: UIViewController {
             let store = HabitsStore.shared
             store.habits.append(newHabit)
 
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true)
         }
+
     }
 
     @objc func cancelHabit() {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
 
     @objc func chooseColor() {
@@ -299,12 +300,12 @@ class HabitViewController: UIViewController {
     }
 }
 
+
 extension HabitViewController: UIColorPickerViewControllerDelegate {
 
     internal func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
-    let color = viewController.selectedColor
-    colorChangeButton.backgroundColor = color
-    setColor = color
+        let color = viewController.selectedColor
+        colorChangeButton.backgroundColor = color
+        setColor = color
     }
-
 }

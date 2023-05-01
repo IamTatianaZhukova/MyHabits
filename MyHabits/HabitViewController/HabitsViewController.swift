@@ -9,22 +9,19 @@ import UIKit
 
 class HabitsViewController: UIViewController {
 
+    private enum Columns {
+        static let numberOfItemsInLine: CGFloat = 1
+    }
+
     private lazy var addHabitButton: UIBarButtonItem = {
         $0.image = UIImage(systemName: "plus")
         $0.tintColor = UIColor(named: "ColorPurple")
         $0.target = self
         $0.style = .plain
-        $0.action = #selector(addHabitAction)
+        $0.action = #selector(addHabit)
 
         return $0
     }(UIBarButtonItem())
-
-    @objc func addHabitAction(_ : UIButton) {
-        let addHabit = HabitViewController()
-        let navСontroller = UINavigationController(rootViewController: addHabit)
-        navСontroller.modalPresentationStyle = .fullScreen
-        self.navigationController?.present(navСontroller, animated: true, completion: nil)
-    }
 
     @objc func addHabit() {
         let addHabit = HabitViewController()
@@ -62,18 +59,13 @@ class HabitsViewController: UIViewController {
         $0.dataSource = self
         $0.register(ProgressCollectionViewCell.self, forCellWithReuseIdentifier: "progressID")
         $0.register(HabitCollectionViewCell.self, forCellWithReuseIdentifier: "habitID")
-        $0.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "defaulltID")
+        $0.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "defaultID")
 
         return $0
     }(UICollectionView(frame: .zero, collectionViewLayout: self.layout))
 
     private var wightHeader: CGFloat = 0
-
     var time = "0"
-
-    private enum Columns {
-        static let numberOfItemsInLine: CGFloat = 1
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +90,6 @@ class HabitsViewController: UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
@@ -162,8 +153,7 @@ extension HabitsViewController: UICollectionViewDataSource, UICollectionViewDele
 
             return cell
         }
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultID", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultId", for: indexPath)
 
         return cell
     }

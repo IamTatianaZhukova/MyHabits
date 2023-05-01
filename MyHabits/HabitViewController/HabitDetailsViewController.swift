@@ -13,7 +13,7 @@ class HabitDetailsViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.dataSource = self
         $0.delegate = self
-        $0.register(HabitTableViewCell.self, forCellReuseIdentifier: "headerCell")
+        $0.register(HabitTableViewCell.self, forCellReuseIdentifier: "customCell")
         $0.register(UITableViewCell.self, forCellReuseIdentifier: "defaultCell")
         $0.register(HabitTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "headerId")
 
@@ -26,25 +26,26 @@ class HabitDetailsViewController: UIViewController {
         $0.title = "Править"
         $0.action = #selector(changeHabit)
         $0.tintColor = UIColor(named: "ColorPurple")
-
+        
         return $0
     }(UIBarButtonItem())
 
     @objc func changeHabit() {
         let habitVC = HabitViewController()
 
-        habitVC.saveHabitButton.action = #selector(habitVC.saveHabit)
-        habitVC.cancelHabitButton.action = #selector(habitVC.cancelHabit)
+        habitVC.saveHabitButton.action = #selector(habitVC.editHabit)
+        habitVC.cancelHabitButton.action = #selector(habitVC.cancelEdit)
         habitVC.titleView = "Править"
 
         habitVC.numberHabitVC = numberHabitDetailsVC
-
+        
         habitVC.nameHabitTextField.text = HabitsStore.shared.habits[numberHabitDetailsVC].name
         habitVC.setText = HabitsStore.shared.habits[numberHabitDetailsVC].name
 
         habitVC.colorChangeButton.backgroundColor = HabitsStore.shared.habits[numberHabitDetailsVC].color
         habitVC.setColor = HabitsStore.shared.habits[numberHabitDetailsVC].color
 
+        habitVC.timeLabel.text = HabitsStore.shared.habits[numberHabitDetailsVC].dateString
         habitVC.setTime = HabitsStore.shared.habits[numberHabitDetailsVC].date
         habitVC.timePicker.date = HabitsStore.shared.habits[numberHabitDetailsVC].date
 
@@ -104,13 +105,13 @@ class HabitDetailsViewController: UIViewController {
     }
 }
 
-extension HabitDetailsViewController: UITableViewDataSource, UITableViewDelegate {
+extension HabitDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arriveDates.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as? HabitTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? HabitTableViewCell else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
 
             return cell
@@ -133,8 +134,7 @@ extension HabitDetailsViewController: UITableViewDataSource, UITableViewDelegate
 
             return headerView
         }
-
+        
         return nil
     }
 }
-

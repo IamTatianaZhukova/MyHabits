@@ -12,6 +12,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     private lazy var nameProgressLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "Всё получится!"
+        $0.numberOfLines = 0
         $0.textColor = .systemGray
         $0.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
 
@@ -31,11 +32,10 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     lazy var progressView: UIProgressView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.progressTintColor = UIColor(named: "ColorPurple")
-        $0.setProgress(HabitsStore.shared.todayProgress, animated: true)
-        $0.tag = 130
+        $0.progress = HabitsStore.shared.todayProgress
 
         return $0
-    }(UIProgressView(progressViewStyle: .default))
+    }(UIProgressView())
 
     override init(frame: CGRect) {
         super .init(frame: frame)
