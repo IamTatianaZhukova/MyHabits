@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon-1024px" translatesAutoresizingMaskIntoConstraints="NO" id="psJ-aY-uuZ">
-                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <rect key="frame" x="147" y="388" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="D7D-em-qeG"/>
-                                    <constraint firstAttribute="width" constant="150" id="WKg-qj-mko"/>
+                                    <constraint firstAttribute="width" constant="120" id="1R6-Wv-5Vs"/>
+                                    <constraint firstAttribute="height" constant="120" id="sa6-K1-uCa"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyHabits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flX-91-DJj">
-                                <rect key="frame" x="162" y="523" width="90.5" height="339"/>
+                                <rect key="frame" x="162" y="768" width="90.5" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.63137254901960782" green="0.086274509803921567" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -33,13 +33,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="flX-91-DJj" secondAttribute="bottom" id="0lN-Ce-WOO"/>
-                            <constraint firstItem="psJ-aY-uuZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4Cs-pG-SZ4"/>
-                            <constraint firstItem="flX-91-DJj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Lr4-KO-QcF"/>
-                            <constraint firstItem="flX-91-DJj" firstAttribute="top" secondItem="psJ-aY-uuZ" secondAttribute="bottom" id="T07-sQ-EBo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="flX-91-DJj" secondAttribute="trailing" id="iVS-8O-MYM"/>
-                            <constraint firstItem="psJ-aY-uuZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mNn-p6-jlC"/>
-                            <constraint firstItem="flX-91-DJj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x9p-tT-b6B"/>
+                            <constraint firstItem="flX-91-DJj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0Va-FK-bVl"/>
+                            <constraint firstItem="psJ-aY-uuZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9xG-SP-MwU"/>
+                            <constraint firstItem="flX-91-DJj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-70" id="UqP-TG-bLw"/>
+                            <constraint firstItem="psJ-aY-uuZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="g8Z-vt-qR6"/>
                         </constraints>
                     </view>
                 </viewController>

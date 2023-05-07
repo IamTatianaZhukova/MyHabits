@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HabitTableViewCell: UITableViewCell {
+final class HabitTableViewCell: UITableViewCell {
 
     lazy var dateLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false

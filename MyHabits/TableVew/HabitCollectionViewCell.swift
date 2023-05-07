@@ -7,7 +7,9 @@
 
 import UIKit
 
-class HabitCollectionViewCell: UICollectionViewCell {
+final class HabitCollectionViewCell: UICollectionViewCell {
+
+    weak var delegate: HabitCollectionViewCellDelegate?
 
     private lazy var nameHabit: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -46,6 +48,10 @@ class HabitCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super .init(frame: frame)
+
+        layer.cornerRadius = 8
+        clipsToBounds = true
+        backgroundColor = .white
 
         setupUI()
         setupConstraints()
@@ -92,15 +98,15 @@ class HabitCollectionViewCell: UICollectionViewCell {
         ])
     }
 
-    func setup(index: Int) {
+    func setupCell(habit: Habit, index: Int) {
         nameHabit.tag = index
-        nameHabit.text = HabitsStore.shared.habits[index].name
-        nameHabit.textColor = HabitsStore.shared.habits[index].color
-        timeHabit.text = "Каждый день в \(HabitsStore.shared.habits[index].dateString)"
-        counter.text = "Счетчик: \(HabitsStore.shared.habits[index].trackDates.count)"
-        checkMarkButton.layer.borderColor = HabitsStore.shared.habits[index].color.cgColor
+        nameHabit.text = habit.name
+        nameHabit.textColor = habit.color
+        timeHabit.text = "Каждый день в \(habit.dateString)"
+        counter.text = "Счетчик: \(habit.trackDates.count)"
+        checkMarkButton.layer.borderColor = habit.color.cgColor
 
-        if HabitsStore.shared.habits[index].isAlreadyTakenToday {
+        if habit.isAlreadyTakenToday {
             checkMarkButton.backgroundColor = UIColor(cgColor: checkMarkButton.layer.borderColor ?? UIColor.white.cgColor)
         } else {
             checkMarkButton.backgroundColor = .white
@@ -118,4 +124,8 @@ class HabitCollectionViewCell: UICollectionViewCell {
             counter.text = "Счетчик: \(HabitsStore.shared.habits[index].trackDates.count)"
         }
     }
+}
+
+protocol HabitCollectionViewCellDelegate: AnyObject {
+    func didTapRoundImage()
 }

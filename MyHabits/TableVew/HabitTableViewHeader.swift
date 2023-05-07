@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HabitTableViewHeader: UITableViewHeaderFooterView {
+final class HabitTableViewHeader: UITableViewHeaderFooterView {
 
     private lazy var titleLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false

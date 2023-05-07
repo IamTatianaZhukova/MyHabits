@@ -9,6 +9,8 @@ import UIKit
 
 class HabitDetailsViewController: UIViewController {
 
+    var habit: Habit?
+
     private lazy var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.dataSource = self
@@ -30,15 +32,17 @@ class HabitDetailsViewController: UIViewController {
         return $0
     }(UIBarButtonItem())
 
-    @objc func changeHabit() {
+    @objc func changeHabit(sender: UIButton) {
         let habitVC = HabitViewController()
 
-        habitVC.saveHabitButton.action = #selector(habitVC.editHabit)
-        habitVC.cancelHabitButton.action = #selector(habitVC.cancelEdit)
-        habitVC.titleView = "Править"
+        habitVC.habitState = .edit
 
         habitVC.numberHabitVC = numberHabitDetailsVC
-        
+
+        habitVC.closure = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+
         habitVC.nameHabitTextField.text = HabitsStore.shared.habits[numberHabitDetailsVC].name
         habitVC.setText = HabitsStore.shared.habits[numberHabitDetailsVC].name
 
@@ -49,10 +53,9 @@ class HabitDetailsViewController: UIViewController {
         habitVC.setTime = HabitsStore.shared.habits[numberHabitDetailsVC].date
         habitVC.timePicker.date = HabitsStore.shared.habits[numberHabitDetailsVC].date
 
-        habitVC.alertController.message = "Вы хотите удалить привычку '\(HabitsStore.shared.habits[numberHabitDetailsVC].name)'?"
-        habitVC.deleteHabitButton.isHidden = false
-
-        navigationController?.pushViewController(habitVC, animated: true)
+        let navigationVC = UINavigationController(rootViewController: habitVC)
+        navigationVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(navigationVC, animated: true)
     }
 
     var numberHabitDetailsVC = 0
@@ -134,7 +137,6 @@ extension HabitDetailsViewController: UITableViewDelegate, UITableViewDataSource
 
             return headerView
         }
-        
         return nil
     }
 }
