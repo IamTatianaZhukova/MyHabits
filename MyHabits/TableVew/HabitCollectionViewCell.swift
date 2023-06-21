@@ -47,7 +47,7 @@ final class HabitCollectionViewCell: UICollectionViewCell {
     }(UIButton())
 
     override init(frame: CGRect) {
-        super .init(frame: frame)
+        super.init(frame: frame)
 
         layer.cornerRadius = 8
         clipsToBounds = true
@@ -113,7 +113,7 @@ final class HabitCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    @objc func executionHabit() {
+    @objc func executionHabit(_ sender: UIButton) {
         let index = nameHabit.tag
 
         if HabitsStore.shared.habits[index].isAlreadyTakenToday {
@@ -122,6 +122,7 @@ final class HabitCollectionViewCell: UICollectionViewCell {
             checkMarkButton.backgroundColor = UIColor(cgColor: checkMarkButton.layer.borderColor ?? UIColor.white.cgColor)
             HabitsStore.shared.track(HabitsStore.shared.habits[index])
             counter.text = "Счетчик: \(HabitsStore.shared.habits[index].trackDates.count)"
+            self.delegate?.didTapRoundImage()
         }
     }
 }
